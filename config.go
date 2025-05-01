@@ -14,10 +14,10 @@ type Config struct {
 	Debug         bool
 }
 
-func DefaultConfig() *Config {
+func DefaultConfig(tunnelServer string) *Config {
 	homeDir, _ := os.UserHomeDir()
 	return &Config{
-		TunnelServer:  "localhost:9000",
+		TunnelServer:  tunnelServer,
 		TokenFilePath: filepath.Join(homeDir, ".ngorok", "auth.token"),
 		Debug:         false,
 	}

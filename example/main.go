@@ -11,11 +11,11 @@ import (
 )
 
 func main() {
-	config := sdk.DefaultConfig()
-	config.LocalPort = "8080"
-	config.AuthToken = "6lB1JCZ3LS0VygbH3YfobSnKOIbhW1yr"
+	config := sdk.DefaultConfig("ngorok.site:9000")
+	config.LocalPort = "8080"                             // this used to test the tunnel on your loca  machine
+	config.AuthToken = "6lB1JCZ3LS0VygbH3YfobSnKOIbhW1yr" // replace with your token
 
-	client, err := sdk.NewClient(config)
+	client, err := sdk.NewClient(config, "")
 	if err != nil {
 		log.Fatalln(err)
 	}

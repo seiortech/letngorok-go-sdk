@@ -2,6 +2,7 @@ package sdk
 
 import (
 	"encoding/json"
+	"errors"
 	"fmt"
 	"io"
 	"log"
@@ -33,9 +34,13 @@ type TunnelClient struct {
 	logger        *log.Logger
 }
 
-func NewClient(config *Config) (Client, error) {
+func NewClient(config *Config, tunnelServer string) (Client, error) {
 	if config == nil {
-		config = DefaultConfig()
+		if tunnelServer == "" {
+			return nil, errors.New("you need to set tunnel server")
+		}
+
+		config = DefaultConfig(tunnelServer)
 	}
 
 	if config.LocalPort == "" {
