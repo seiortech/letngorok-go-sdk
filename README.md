@@ -30,3 +30,6 @@ func main() {
 	client.Start("set-your-local-port-here", nil)
 }
 ```
+
+## Notes
+- Currently, the local test server didn't works. I'm currently still working on the local analytics dashboard.
