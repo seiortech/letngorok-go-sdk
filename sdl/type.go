@@ -1,4 +1,4 @@
-package sdk
+package sample
 
 type TunnelMessageType int
 

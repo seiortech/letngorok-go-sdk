@@ -10,4 +10,6 @@ var (
 	ErrAuthFailure      = errors.New("authentication failed")
 	ErrConnectionClosed = errors.New("tunnel connection closed")
 	ErrTunnelTimeout    = errors.New("tunnel connection timed out")
+
+	ErrDuplicatePort = errors.New("duplicate port")
 )
